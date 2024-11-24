@@ -2,7 +2,7 @@
 
 ## URL
 
-http:///tigatechs.com
+http://tigatechs.com
 
 ## フロントサイト
 
