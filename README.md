@@ -20,4 +20,4 @@ http://tigatechs.com
 
 ### 構成図
 
-<image src="./public/architecture.png">
+<image src="./front/public/architecture.png">
