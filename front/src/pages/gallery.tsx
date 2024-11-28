@@ -6,13 +6,26 @@ import Menu from "@/components/Menu";
 import GalleryModal from "@/components/GalleryModal";
 import { useFetchJson } from "@/common/fetch";
 import endpoint from "@/common/endpoint";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+
 // Local image import
 import architectureImg from "../../public/architecture.png";
 
 const PAGE_TITLE = "Gallery";
 
 export default function Gallery() {
+  const useIsMobile = () => {
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+      const userAgent = navigator.userAgent || '';
+      setIsMobile(/Mobile|Android|iP(hone|od|ad)/i.test(userAgent));
+    }, []);
+
+    return isMobile;
+  };
+  const isMobile = useIsMobile();
+  console.log("isMobile: ", isMobile)
   const [modalImgNum, setModalImgNum] = useState(0);
   const [modalImageList, setModalImageList] = useState({});
   const gallery = useFetchJson(endpoint.gallery);
@@ -39,7 +52,7 @@ export default function Gallery() {
                       const index = j + 1;
                       return (
                         <div className="" key={j}>
-                          <Image
+                          {/* <Image
                             src={img.src}
                             alt={img.alt}
                             width={480}
@@ -48,7 +61,30 @@ export default function Gallery() {
                               setModalImgNum(index);
                               setModalImageList(obj?.images);
                             }}
-                          />
+                          /> */}
+                          {!isMobile && <img
+                            loading="lazy"
+                            src={img.src}
+                            alt={img.alt}
+                            width={480}
+                            height={360}
+                            onClick={() => {
+                              setModalImgNum(index);
+                              setModalImageList(obj?.images);
+                            }}
+                          />}
+                          {isMobile && <a
+                            href={img.src}
+                            target="_blank"
+                            rel="noopener noreferrer">
+                            <img
+                              loading="lazy"
+                              src={img.src}
+                              alt={img.alt}
+                              width={480}
+                              height={360}
+                            />
+                          </a>}
                           <p>{img.alt}</p>
                           {
                             !!setModalImgNum && (
