@@ -1,6 +1,7 @@
 import Image from "next/image";
 import ReactModal from "react-modal";
 import favicon from "../../public/favicon.ico";
+import { updatejpegFileName } from "../common/common";
 
 const GalleryModal = (props: { modalImgNum: number, setModalImgNum: Function, modalImageList: any }) => {
   const { modalImgNum, setModalImgNum, modalImageList } = props;
@@ -17,16 +18,10 @@ const GalleryModal = (props: { modalImgNum: number, setModalImgNum: Function, mo
           <button className={isAvtiveLtArrow ? "bk-button active" : "bk-button"} onClick={() => isAvtiveLtArrow && setModalImgNum(modalImgNum - 1)}>＜</button>
           <div className="link-container">
             <a href={imgData?.src} target="_blank" rel="noopener noreferrer" >
-              {/* <Image
-                alt={imgData?.alt || ""}
-                src={imgData?.src || favicon}
-                width={1600}
-                height={1200}
-              /> */}
-              <img
+              <Image
                 loading="lazy"
                 alt={imgData?.alt || ""}
-                src={imgData?.src || favicon}
+                src={imgData?.src ? updatejpegFileName(imgData.src, 1600) : favicon}
                 width={1600}
                 height={1200}
               />

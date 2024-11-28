@@ -7,6 +7,7 @@ import GalleryModal from "@/components/GalleryModal";
 import { useFetchJson } from "@/common/fetch";
 import endpoint from "@/common/endpoint";
 import { useState, useEffect } from "react";
+import { updatejpegFileName } from "../common/common";
 
 // Local image import
 import architectureImg from "../../public/architecture.png";
@@ -25,7 +26,6 @@ export default function Gallery() {
     return isMobile;
   };
   const isMobile = useIsMobile();
-  console.log("isMobile: ", isMobile)
   const [modalImgNum, setModalImgNum] = useState(0);
   const [modalImageList, setModalImageList] = useState({});
   const gallery = useFetchJson(endpoint.gallery);
@@ -52,19 +52,9 @@ export default function Gallery() {
                       const index = j + 1;
                       return (
                         <div className="" key={j}>
-                          {/* <Image
-                            src={img.src}
-                            alt={img.alt}
-                            width={480}
-                            height={360}
-                            onClick={() => {
-                              setModalImgNum(index);
-                              setModalImageList(obj?.images);
-                            }}
-                          /> */}
-                          {!isMobile && <img
+                          {!isMobile && <Image
                             loading="lazy"
-                            src={img.src}
+                            src={updatejpegFileName(img.src, 480)}
                             alt={img.alt}
                             width={480}
                             height={360}
@@ -77,9 +67,9 @@ export default function Gallery() {
                             href={img.src}
                             target="_blank"
                             rel="noopener noreferrer">
-                            <img
+                            <Image
                               loading="lazy"
-                              src={img.src}
+                              src={updatejpegFileName(img.src, 480)}
                               alt={img.alt}
                               width={480}
                               height={360}
