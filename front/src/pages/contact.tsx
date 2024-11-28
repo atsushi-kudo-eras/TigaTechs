@@ -37,6 +37,7 @@ export default function Contact() {
     { id: "webPage", label: "Webページ制作について", value: "Webページ制作について", required: RADIO_ERROR_MESSAGE },
     { id: "webApp", label: "Webアプリ構築について", value: "Webアプリ構築について", required: RADIO_ERROR_MESSAGE },
     { id: "teaching", label: "プログラミング教育について", value: "プログラミング教育について", required: RADIO_ERROR_MESSAGE },
+    { id: "joy", label: "遊びのお誘い", value: "遊びのお誘い", required: RADIO_ERROR_MESSAGE },
     { id: "other", label: "その他", value: "その他", required: RADIO_ERROR_MESSAGE },
   ];
 
