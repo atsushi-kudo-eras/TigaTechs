@@ -48,6 +48,12 @@
     a {
       color: var(--white);
     }
+    @media (max-width: 1024px) {
+      padding-bottom: 3rem;
+      a {
+        padding-bottom: 1rem;
+      }
+    }
     .header-h1 {
       font-size: calc(212 / 1920 * 100vw);
       line-height: calc(258 / 1920 * 100vw);
@@ -88,6 +94,9 @@
         line-height: 4rem;
         font-size: 1.5rem;
       }
+    }
+    .gray {
+      color: #acacac;
     }
     @media (min-width: 1024px) {
       :not(:first-child)::before {
@@ -272,5 +281,44 @@
       border: none;
       font-size: 1.25rem;
     }
+  }
+}
+.spHbgMenu {
+  position: absolute;
+  right: 2.5rem;
+  top: 1.5rem;
+  span,
+  span:before,
+  span:after {
+    content: '';
+    display: block;
+    height: 3px;
+    width: 25px;
+    border-radius: 3px;
+    background-color: #ffffff;
+    position: absolute;
+  }
+  span:before {
+    bottom: 8px;
+  }
+  span:after {
+    top: 8px;
+  }
+}
+
+.spMenuModal {
+  div {
+    display: flex;
+    justify-content: right;
+    button {
+      margin: 0 0 1rem auto;
+      width: fit-content;
+      background-color: initial;
+      border: none;
+    }
+  }
+  nav {
+    flex-direction: column !important;
+    border-bottom: initial !important;
   }
 }
