@@ -17,7 +17,14 @@ const GalleryModal = (props: { modalImgNum: number, setModalImgNum: Function, mo
           <button className={isAvtiveLtArrow ? "bk-button active" : "bk-button"} onClick={() => isAvtiveLtArrow && setModalImgNum(modalImgNum - 1)}>＜</button>
           <div className="link-container">
             <a href={imgData?.src} target="_blank" rel="noopener noreferrer" >
-              <Image
+              {/* <Image
+                alt={imgData?.alt || ""}
+                src={imgData?.src || favicon}
+                width={1600}
+                height={1200}
+              /> */}
+              <img
+                loading="lazy"
                 alt={imgData?.alt || ""}
                 src={imgData?.src || favicon}
                 width={1600}
