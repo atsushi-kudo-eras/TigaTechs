@@ -8,6 +8,11 @@ const nextConfig = {
         hostname: 'asset.tigatechs.com',
         port: '',
       },
+      {
+        protocol: 'https',
+        hostname: 'dxi4lfdhvmo7a.cloudfront.net',
+        port: '',
+      },
     ],
   },
   // サーバサイドで使用するURL
