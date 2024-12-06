@@ -2,9 +2,6 @@ import HeadComp from "@/components/HeadComp";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Menu from "@/components/Menu";
-import { postSender } from "@/common/fetch";
-import { useState } from "react";
-import { useForm, SubmitHandler } from "react-hook-form";
 
 // constant text
 const PAGE_TITLE = "Calendar";
