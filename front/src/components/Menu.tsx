@@ -34,6 +34,7 @@ const Menu: NextPage = () => {
       <Link href="/technology">Technology</Link>
       <Link href="/gallery">Gallery</Link>
       <Link href="/contact">Contact</Link>
+      <Link href="/calendar">Calendar</Link>
     </nav>
   );
 }
