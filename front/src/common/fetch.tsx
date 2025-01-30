@@ -8,7 +8,7 @@ type Inputs = {
   mail: string;
   type: string;
   text: string;
-  submit: any;
+  submit: void;
 };
 
 type Data = {

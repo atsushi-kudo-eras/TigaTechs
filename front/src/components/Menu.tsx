@@ -1,18 +1,8 @@
 import { NextPage } from "next";
 import Link from "next/link";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import SpMenu from "./SpMenu";
-
-const useIsMobile = () => {
-  const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    const userAgent = navigator.userAgent || '';
-    setIsMobile(/Mobile|Android|iP(hone|od|ad)/i.test(userAgent));
-  }, []);
-
-  return isMobile;
-};
+import useIsMobile from "@/common/useIsMobile";
 
 const Menu: NextPage = () => {
   const isMobile = useIsMobile();
