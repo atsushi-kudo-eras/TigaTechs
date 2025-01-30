@@ -6,8 +6,9 @@ import Menu from "@/components/Menu";
 import GalleryModal from "@/components/GalleryModal";
 import { useFetchJson } from "@/common/fetch";
 import endpoint from "@/common/endpoint";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { updatejpegFileName } from "../common/common";
+import useIsMobile from "@/common/useIsMobile";
 
 // Local image import
 import architectureImg from "../../public/architecture.png";
@@ -15,16 +16,6 @@ import architectureImg from "../../public/architecture.png";
 const PAGE_TITLE = "Gallery";
 
 export default function Gallery() {
-  const useIsMobile = () => {
-    const [isMobile, setIsMobile] = useState(false);
-
-    useEffect(() => {
-      const userAgent = navigator.userAgent || '';
-      setIsMobile(/Mobile|Android|iP(hone|od|ad)/i.test(userAgent));
-    }, []);
-
-    return isMobile;
-  };
   const isMobile = useIsMobile();
   const [modalImgNum, setModalImgNum] = useState(0);
   const [modalImageList, setModalImageList] = useState({});
