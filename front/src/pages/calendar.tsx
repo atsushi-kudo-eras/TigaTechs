@@ -44,13 +44,19 @@ export default function Calendar() {
       <Menu />
       <main>
         <div className="CalendarWrapper" style={{ width: "100%", textAlign: "center" }}>
-          <iframe
-            src="https://calendar.google.com/calendar/embed?height=900&wkst=2&ctz=Asia%2FTokyo&showPrint=0&mode=WEEK&showTitle=0&showTabs=0&showCalendars=0&showTz=0&src=MmQ5ZDUyMTAxZGYxMTE4NTEzZGVmYWUwNGIzNjU2ZTNhNjFhNGQxNmEwNGY3MGQ2MzQyNmI4Y2M1Njc2ZjYzZEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&src=amEuamFwYW5lc2UjaG9saWRheUBncm91cC5vLmNhbGVuZGFyLmdvb2dsZS5jb2m"
-            width="100%"
-            height={calendarHeight}
-            style={{ border: 0 }}
-            scrolling="no"
-          />
+          {
+            mounted ? (
+              <iframe
+                src="https://calendar.google.com/calendar/embed?height=900&wkst=2&ctz=Asia%2FTokyo&showPrint=0&mode=WEEK&showTitle=0&showTabs=0&showCalendars=0&showTz=0&src=MmQ5ZDUyMTAxZGYxMTE4NTEzZGVmYWUwNGIzNjU2ZTNhNjFhNGQxNmEwNGY3MGQ2MzQyNmI4Y2M1Njc2ZjYzZEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&src=amEuamFwYW5lc2UjaG9saWRheUBncm91cC5vLmNhbGVuZGFyLmdvb2dsZS5jb2m"
+                width="100%"
+                height={calendarHeight}
+                style={{ border: 0 }}
+                scrolling="no"
+              />
+            ) : (
+              <p>Loading...</p>
+            )
+          }
         </div>
       </main>
       <Footer />
