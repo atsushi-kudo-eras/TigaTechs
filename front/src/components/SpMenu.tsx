@@ -16,7 +16,7 @@ const SpMenu = (props: { isOpen: Boolean, setIsOpen: Function }) => {
           <Link href="/technology" className={pathName === "/technology" ? "gray" : ""}>Technology</Link>
           <Link href="/gallery" className={pathName === "/gallery" ? "gray" : ""}>Gallery</Link>
           <Link href="/contact" className={pathName === "/contact" ? "gray" : ""}>Contact</Link>
-          <Link href="/calender" className={pathName === "/calender" ? "gray" : ""}>Calender</Link>
+          <Link href="/calendar" className={pathName === "/calendar" ? "gray" : ""}>calendar</Link>
         </nav>
       </div>
     </ReactModal>
